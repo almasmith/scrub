@@ -26,6 +26,7 @@ My thoughts bounce between handing a timeline cell a recording and a collection 
 Also interesting is that despite a recording and an event being separate entities, they are extremely similar. The both have a camera and a start and end. Even though recording doesn't have a duration field, it still has a duration by it's very nature. The only difference it seems as that a recording can have events that happened during it. I wonder if events can have other events within them. If so, a recording and event are nearly the same entity.
 
 The model could look like this:
+~~~~
 protocol Device
   id: String
   name: String
@@ -43,5 +44,6 @@ protocol Eventful
 class Camera: Device
 class Recording: Recordable, Eventful
 class Event: Recordable
+~~~~
   
 I'm going to take some liberties with the sample data that I've been given. This is due to the fact that the data is coming in a way somewhat different than I'd expect from a web service. For example, the only association that a recording has to a camera is not in the data itself, but in the name of the file. If it actually does come this way in production, then I apologize.
