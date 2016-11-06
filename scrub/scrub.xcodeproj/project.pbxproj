@@ -19,6 +19,10 @@
 		9636022A1DCED87E0020C161 /* events-camera-12.txt in Resources */ = {isa = PBXBuildFile; fileRef = 963602261DCED87E0020C161 /* events-camera-12.txt */; };
 		9636022B1DCED87E0020C161 /* recordings-camera-10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 963602271DCED87E0020C161 /* recordings-camera-10.txt */; };
 		9636022C1DCED87E0020C161 /* recordings-camera-12.txt in Resources */ = {isa = PBXBuildFile; fileRef = 963602281DCED87E0020C161 /* recordings-camera-12.txt */; };
+		963602301DCEE8610020C161 /* Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9636022F1DCEE8610020C161 /* Contracts.swift */; };
+		963602321DCEE9B40020C161 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963602311DCEE9B40020C161 /* Camera.swift */; };
+		963602341DCEED660020C161 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963602331DCEED660020C161 /* Recording.swift */; };
+		963602361DCEEF950020C161 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963602351DCEEF950020C161 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		963602261DCED87E0020C161 /* events-camera-12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "events-camera-12.txt"; sourceTree = "<group>"; };
 		963602271DCED87E0020C161 /* recordings-camera-10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "recordings-camera-10.txt"; sourceTree = "<group>"; };
 		963602281DCED87E0020C161 /* recordings-camera-12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "recordings-camera-12.txt"; sourceTree = "<group>"; };
+		9636022F1DCEE8610020C161 /* Contracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contracts.swift; sourceTree = "<group>"; };
+		963602311DCEE9B40020C161 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		963602331DCEED660020C161 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		963602351DCEEF950020C161 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,10 @@
 		9636021E1DCED25A0020C161 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				9636022F1DCEE8610020C161 /* Contracts.swift */,
+				963602311DCEE9B40020C161 /* Camera.swift */,
+				963602331DCEED660020C161 /* Recording.swift */,
+				963602351DCEEF950020C161 /* Event.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -245,9 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963602361DCEEF950020C161 /* Event.swift in Sources */,
 				963602011DCED12B0020C161 /* ViewController.swift in Sources */,
 				963601FF1DCED12B0020C161 /* AppDelegate.swift in Sources */,
+				963602321DCEE9B40020C161 /* Camera.swift in Sources */,
+				963602301DCEE8610020C161 /* Contracts.swift in Sources */,
 				963602231DCED6340020C161 /* MockRecordingDownloader.swift in Sources */,
+				963602341DCEED660020C161 /* Recording.swift in Sources */,
 				963602211DCED2820020C161 /* RecordingDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
