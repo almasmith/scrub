@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Event: Recordable {
+class Event: Recordable {
   var id: String
   var device: CaptureDevice
   var startTime: Date

@@ -9,12 +9,12 @@
 import Foundation
 
 protocol RecordingDownloader {
-  func downloadRecordings(for cameraID: String, completion: @escaping (Data?, Error?) -> Void)
-  func downloadEvents(for cameraID: String, completion: @escaping (Data?, Error?) -> Void)
+  func downloadRecordings(for device: CaptureDevice, completion: @escaping (Data?, Error?) -> Void)
+  func downloadEvents(for device: CaptureDevice, completion: @escaping (Data?, Error?) -> Void)
 }
 
 enum RecordingDownloadError: Error {
-  case invalidCamera
+  case invalidCaptureDevice
   case couldNotFindFile
   case couldNotReadFile
 
