@@ -29,6 +29,7 @@
 		9636023E1DCEFF060020C161 /* EventProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9636023D1DCEFF060020C161 /* EventProcessor.swift */; };
 		963602421DCFFAB20020C161 /* DeviceOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963602411DCFFAB20020C161 /* DeviceOrganizer.swift */; };
 		963602441DD016280020C161 /* RecordingGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963602431DD016280020C161 /* RecordingGap.swift */; };
+		963602481DD029E00020C161 /* ScrubSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963602471DD029E00020C161 /* ScrubSegmentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		9636023D1DCEFF060020C161 /* EventProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventProcessor.swift; sourceTree = "<group>"; };
 		963602411DCFFAB20020C161 /* DeviceOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceOrganizer.swift; sourceTree = "<group>"; };
 		963602431DD016280020C161 /* RecordingGap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingGap.swift; sourceTree = "<group>"; };
+		963602471DD029E00020C161 /* ScrubSegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrubSegmentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +111,12 @@
 		963601FD1DCED12B0020C161 /* scrub */ = {
 			isa = PBXGroup;
 			children = (
+				963602461DD029970020C161 /* views */,
+				963602451DD0298F0020C161 /* view controllers */,
 				963602241DCED7FD0020C161 /* data */,
 				9636021F1DCED2600020C161 /* utilities */,
 				9636021E1DCED25A0020C161 /* model */,
 				963601FE1DCED12B0020C161 /* AppDelegate.swift */,
-				963602001DCED12B0020C161 /* ViewController.swift */,
 				963602021DCED12B0020C161 /* Main.storyboard */,
 				963602051DCED12B0020C161 /* Assets.xcassets */,
 				963602071DCED12B0020C161 /* LaunchScreen.storyboard */,
@@ -168,6 +171,22 @@
 			name = data;
 			sourceTree = "<group>";
 		};
+		963602451DD0298F0020C161 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				963602001DCED12B0020C161 /* ViewController.swift */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		963602461DD029970020C161 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				963602471DD029E00020C161 /* ScrubSegmentCell.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +237,7 @@
 				TargetAttributes = {
 					963601FA1DCED12B0020C161 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 97X6HR3993;
 						ProvisioningStyle = Automatic;
 					};
 					9636020E1DCED12B0020C161 = {
@@ -284,6 +304,7 @@
 				963601FF1DCED12B0020C161 /* AppDelegate.swift in Sources */,
 				9636023E1DCEFF060020C161 /* EventProcessor.swift in Sources */,
 				963602321DCEE9B40020C161 /* Camera.swift in Sources */,
+				963602481DD029E00020C161 /* ScrubSegmentCell.swift in Sources */,
 				963602301DCEE8610020C161 /* Contracts.swift in Sources */,
 				963602231DCED6340020C161 /* MockRecordingDownloader.swift in Sources */,
 				963602341DCEED660020C161 /* Recording.swift in Sources */,
@@ -370,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -427,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 97X6HR3993;
 				INFOPLIST_FILE = scrub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jalmasmith.scrub;
@@ -439,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 97X6HR3993;
 				INFOPLIST_FILE = scrub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jalmasmith.scrub;

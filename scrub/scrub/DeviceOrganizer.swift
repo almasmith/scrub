@@ -56,7 +56,6 @@ class DeviceOrganizer {
     }
     
     // TODO: Do something with orphaned events
-    print(orphanedEvents)
   }
   
   private func addGapsToRecordings(for device: CaptureDevice) {
@@ -68,7 +67,7 @@ class DeviceOrganizer {
       // exit on last item
       guard nextIndex < device.recordings.endIndex else {
         recordingsWithGaps.append(thisRecording)
-        return
+        break
       }
       
       let nextRecording = device.recordings[nextIndex]
@@ -79,7 +78,9 @@ class DeviceOrganizer {
       
       // if more than a second, add gap in timeline
       if nextStart - thisEnd > maxDeadSpace {
-        let gap = RecordingGap(id: UUID().uuidString, device: device, startTime: thisRecording.endTime, endTime: nextRecording.startTime)
+        let gapStart = Date(timeIntervalSince1970: thisEnd + 1)
+        let gapEnd = Date(timeIntervalSince1970: nextStart - 1)
+        let gap = RecordingGap(id: UUID().uuidString, device: device, startTime: gapStart, endTime: gapEnd)
         recordingsWithGaps.append(gap)
       }
     }
