@@ -9,17 +9,19 @@
 import Foundation
 
 // For this exercise I'm not storing any data locally, so this is just
-// an in memory store of the data that will be used to create the timeline.
+// an in-memory store of the data that will be used to create the timeline.
 class DataManager {
   var downloader: RecordingDownloader
   var recordingProcessor: DataProcessor
   var eventProcessor: DataProcessor
+  var deviceOrganizer: DeviceOrganizer
   var devices: [CaptureDevice] = [Camera(id: "10", name: "camera-10"), Camera(id: "12", name: "camera-12")]
   
-  init(downloader: RecordingDownloader, recordingProcessor: DataProcessor, eventProcessor: DataProcessor) {
+  init(downloader: RecordingDownloader, recordingProcessor: DataProcessor, eventProcessor: DataProcessor, deviceOrganizer: DeviceOrganizer) {
     self.downloader = downloader
     self.recordingProcessor = recordingProcessor
     self.eventProcessor = eventProcessor
+    self.deviceOrganizer = deviceOrganizer
   }
   
   func populateRecordings(completion: @escaping (Bool, Error?) -> Void) {
@@ -31,8 +33,23 @@ class DataManager {
           return
         }
         
-        self.recordingProcessor.process(data: jsonData, for: device)
-        self.populateEvents(for: device, completion: completion)
+        do {
+          try self.recordingProcessor.process(data: jsonData, for: device)
+        }
+        catch {
+          completion(false, error)
+        }
+        
+        self.populateEvents(for: device) {
+          success, error in
+          guard success else {
+            completion(success, error)
+            return
+          }
+          
+          self.deviceOrganizer.organize(device: device)
+          completion(success, error)
+        }
       }
     }
   }
@@ -45,7 +62,13 @@ class DataManager {
         return
       }
       
-      self.eventProcessor.process(data: jsonData, for: device)
+      do {
+        try self.eventProcessor.process(data: jsonData, for: device)
+      }
+      catch {
+        completion(false, error)
+      }
+      
       completion(true, nil)
     }
   }

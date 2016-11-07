@@ -8,6 +8,7 @@
 
 import Foundation
 
+// The contract for a downloader
 protocol RecordingDownloader {
   func downloadRecordings(for device: CaptureDevice, completion: @escaping (Data?, Error?) -> Void)
   func downloadEvents(for device: CaptureDevice, completion: @escaping (Data?, Error?) -> Void)

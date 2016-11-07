@@ -8,10 +8,12 @@
 
 import Foundation
 
+// The contract for a data processor
 protocol DataProcessor {
-  func process(data: Data, for device: CaptureDevice)
+  func process(data: Data, for device: CaptureDevice) throws
 }
 
 enum DataProcessingError: Error {
   case invalidJSON
+  case invalidKey
 }

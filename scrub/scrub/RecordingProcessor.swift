@@ -8,7 +8,28 @@
 
 import Foundation
 
+/// Processes recording json data for a device.
 class RecordingProcessor: DataProcessor {
-  func process(data: Data, for device: CaptureDevice) {
+  private let microsInSecond: Double = 1000000
+  
+  func process(data: Data, for device: CaptureDevice) throws {
+    guard let json = try? JSONSerialization.jsonObject(with: data) as! [String: [[String: Double]]] else {
+      throw DataProcessingError.invalidJSON
+    }
+    
+    guard let recordingsData = json["Ranges"] else {
+      throw DataProcessingError.invalidKey
+    }
+    
+    for recordingData in recordingsData {
+      let startTime = recordingData["StartTime"]! / microsInSecond
+      let startDate = Date(timeIntervalSince1970: startTime)
+      
+      let endTime = recordingData["EndTime"]! / microsInSecond
+      let endDate = Date(timeIntervalSince1970: endTime)
+      
+      let recording = Recording(id: UUID().uuidString, device: device, startTime: startDate, endTime: endDate)
+      device.recordings.append(recording)
+    }
   }
 }

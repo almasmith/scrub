@@ -12,6 +12,7 @@ class Camera: CaptureDevice {
   var id: String
   var name: String
   var recordings: [Recordable] = []
+  var events: [Recordable] = []
   
   init(id: String, name: String) {
     self.id = id

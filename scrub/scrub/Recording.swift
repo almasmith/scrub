@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Recording: Recordable, Eventful {
+class Recording: Recordable {
   var id: String
-  var device: CaptureDevice
+  unowned var device: CaptureDevice
   var startTime: Date
   var endTime: Date
   var events: [Recordable] = []

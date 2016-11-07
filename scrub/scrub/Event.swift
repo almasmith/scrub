@@ -10,7 +10,7 @@ import Foundation
 
 class Event: Recordable {
   var id: String
-  var device: CaptureDevice
+  unowned var device: CaptureDevice
   var startTime: Date
   var endTime: Date
   var duration: TimeInterval

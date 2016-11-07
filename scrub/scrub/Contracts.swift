@@ -1,5 +1,5 @@
 //
-//  Contracts.swift
+//  ModelProtocols.swift
 //  scrub
 //
 //  Created by Jason Smith on 11/5/16.
@@ -12,9 +12,10 @@ protocol Identity {
   var id: String { get }
 }
 
-protocol CaptureDevice: Identity {
+protocol CaptureDevice: class, Identity {
   var name: String { get }
-  var recordings: [Recordable] { get }
+  var recordings: [Recordable] { get set }
+  var events: [Recordable] { get set }
 }
 
 protocol Recordable: Identity {
@@ -22,8 +23,4 @@ protocol Recordable: Identity {
   var startTime: Date { get }
   var endTime: Date { get }
   var duration: TimeInterval { get }
-}
-
-protocol Eventful {
-  var events: [Recordable] { get }
 }

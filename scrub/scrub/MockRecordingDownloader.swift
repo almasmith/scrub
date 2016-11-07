@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A mock downloader that just reads the test data from a file.
 class MockRecordingDownloader: RecordingDownloader {
   
   // In production, these two functions may do very different things.
